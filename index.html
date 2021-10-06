@@ -14,29 +14,157 @@
 
     <title>Frontend Mentor | [Challenge Name Here]</title>
     <link rel="stylesheet" href="css/style.css" />
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <script defer src="js/script.js"></script>
   </head>
   <body>
-    Social Media Dashboard Total Followers: 23,004 Dark Mode @nathanf 1987
-    Followers 12 Today @nathanf 1044 Followers 99 Today @realnathanf 11k
-    Followers 1099 Today Nathan F. 8239 Subscribers 144 Today Overview - Today
-    Page Views 87 3% Likes 52 2% Likes 5462 2257% Profile Views 52k 1375%
-    Retweets 117 303% Likes 507 553% Likes 107 19% Total Views 1407 12%
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+    <div class="container">
+      <div class="wrapper">
+        <header class="heading">
+          <div class="heading__left">
+            <h1 class="heading-title">Social Media Dashboard</h1>
+            <span>Total Followers: 23,004</span>
+          </div>
+          <div class="heading__right">
+            <span>Dark Mode</span>
+            <div class="switch">
+              <div type="checkbox" class="checkbox"></div>
+            </div>
+          </div>
+        </header>
+        <div class="stats-wrapper">
+          <div class="stats mode">
+            <div class="social">
+              <img src="images/icon-facebook.svg" alt="" />
+              <span>@nathanf</span>
+            </div>
+            <h2 class="number">1987</h2>
+            <span class="followers">FOLLOWERS</span>
+            <div class="moves">
+              <img src="images/icon-up.svg" alt="" />
+              <p>12 today</p>
+            </div>
+          </div>
+          <div class="stats mode">
+            <div class="social">
+              <img src="images/icon-twitter.svg" alt="" />
+              <span>@nathanf</span>
+            </div>
+            <h2 class="number">1044</h2>
+            <span class="followers">FOLLOWERS</span>
+            <div class="moves">
+              <img src="images/icon-up.svg" alt="" />
+              <p>99 today</p>
+            </div>
+          </div>
+          <div class="stats mode">
+            <div class="social">
+              <img src="images/icon-instagram.svg" alt="" />
+              <span>@nathanf</span>
+            </div>
+            <h2 class="number">11K</h2>
+            <span class="followers">FOLLOWERS</span>
+            <div class="moves">
+              <img src="images/icon-up.svg" alt="" />
+              <p>1099 today</p>
+            </div>
+          </div>
+          <div class="stats mode">
+            <div class="social">
+              <img src="images/icon-youtube.svg" alt="" />
+              <span>@nathanf</span>
+            </div>
+            <h2 class="number">8239</h2>
+            <span class="followers">FOLLOWERS</span>
+            <div class="moves">
+              <img src="images/icon-down.svg" alt="" />
+              <p>144 today</p>
+            </div>
+          </div>
+        </div>
+        <h2>Overview - Today</h2>
+        <div class="daily-overview">
+          <div class="card mode">
+            <div class="first-line">
+              <span>Page Views</span>
+              <img src="images/icon-facebook.svg" alt="" />
+            </div>
+            <div class="second-line">
+              <p>87</p>
+              <span class="procent">3%</span>
+            </div>
+          </div>
+          <div class="card mode">
+            <div class="first-line">
+              <span>Likes</span>
+              <img src="images/icon-facebook.svg" alt="" />
+            </div>
+            <div class="second-line">
+              <p>52</p>
+              <span class="procent">2%</span>
+            </div>
+          </div>
+          <div class="card mode">
+            <div class="first-line">
+              <span>Likes</span>
+              <img src="images/icon-instagram.svg" alt="" />
+            </div>
+            <div class="second-line">
+              <p>5462</p>
+              <span class="procent">2257%</span>
+            </div>
+          </div>
+          <div class="card mode">
+            <div class="first-line">
+              <span>Profile Views</span>
+              <img src="images/icon-instagram.svg" alt="" />
+            </div>
+            <div class="second-line">
+              <p>52K</p>
+              <span class="procent">1375%</span>
+            </div>
+          </div>
+          <div class="card mode">
+            <div class="first-line">
+              <span>Page Views</span>
+              <img src="images/icon-facebook.svg" alt="" />
+            </div>
+            <div class="second-line">
+              <p>87</p>
+              <span class="procent">3%</span>
+            </div>
+          </div>
+          <div class="card mode">
+            <div class="first-line">
+              <span>Page Views</span>
+              <img src="images/icon-twitter.svg" alt="" />
+            </div>
+            <div class="second-line">
+              <p>117</p>
+              <span class="procent">303%</span>
+            </div>
+          </div>
+          <div class="card mode">
+            <div class="first-line">
+              <span>Page Views</span>
+              <img src="images/icon-twitter.svg" alt="" />
+            </div>
+            <div class="second-line">
+              <p>507</p>
+              <span class="procent">553%</span>
+            </div>
+          </div>
+          <div class="card mode">
+            <div class="first-line">
+              <span>Page Views</span>
+              <img src="images/icon-youtube.svg" alt="" />
+            </div>
+            <div class="second-line">
+              <p>107</p>
+              <span class="procent">12%</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
