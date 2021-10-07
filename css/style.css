@@ -2,6 +2,7 @@
 :root {
   --cl-lime-green: hsl(163, 72%, 41%);
   --cl-bright-red: hsl(356, 69%, 56%);
+  --cl-twitter: hsl(203, 89%, 53%);
   --cl-facebook: hsl(208, 92%, 53%);
   --cl-instagram-gradient1: hsl(37, 97%, 70%);
   --cl-instagram-gradient2: hsl(329, 70%, 58%);
@@ -35,7 +36,6 @@
 }
 
 .wrapper {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,6 +49,7 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  margin: 3rem;
 }
 
 body {
@@ -92,6 +93,7 @@ body {
 }
 
 .heading__right .switch {
+  cursor: pointer;
   width: 50px;
   height: 24px;
   position: relative;
@@ -114,14 +116,15 @@ body {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 2rem;
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
 
 .stats-wrapper .stats {
+  position: relative;
   padding: 1.5rem;
   background-color: var(--cl-dark-card-bg);
   display: -webkit-box;
@@ -138,6 +141,52 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 5px;
+  z-index: -1;
+}
+
+.stats-wrapper .stats:nth-child(1):before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 0px;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+  background: var(--cl-facebook);
+}
+
+.stats-wrapper .stats:nth-child(2):before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 0px;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+  background: var(--cl-twitter);
+}
+
+.stats-wrapper .stats:nth-child(3):before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 0px;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+  background: -webkit-gradient(linear, right top, left top, from(var(--cl-instagram-gradient2)), to(var(--cl-instagram-gradient1)));
+  background: linear-gradient(to left, var(--cl-instagram-gradient2), var(--cl-instagram-gradient1));
+}
+
+.stats-wrapper .stats:nth-child(4):before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 0px;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+  background: var(--cl-youtube);
 }
 
 .stats-wrapper .stats .social {
@@ -182,14 +231,18 @@ body {
   padding: --padding-s 0;
 }
 
+.stats-wrapper .stats .moves p:nth-child(4) {
+  color: var(--cl-bright-red);
+}
+
 .daily-overview {
   width: 100%;
   margin-top: 2rem;
   display: -ms-grid;
   display: grid;
-  grid-auto-rows: 150px;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 120px;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 2rem;
 }
 
@@ -234,17 +287,15 @@ body {
   position: relative;
 }
 
-.daily-overview .card .second-line span::before {
-  content: url("../images/icon-up.svg");
-  position: absolute;
-  bottom: 0;
-  left: -10px;
+.daily-overview .card .second-line .red {
+  color: var(--cl-bright-red);
 }
 
 .mode {
   background-color: var(--cl-dark-card-bg);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  cursor: pointer;
 }
 
 .mode:hover {
@@ -273,21 +324,6 @@ body.night {
   background-color: var(--cl-light-theme-toggle);
 }
 
-@media (max-width: 1100px) {
-  .wrapper {
-    height: 100%;
-    padding: 2rem;
-  }
-  .stats-wrapper {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
-  .daily-overview {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 500px) {
   .heading {
     -webkit-box-orient: vertical;
@@ -297,6 +333,10 @@ body.night {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  .heading__left {
+    margin-bottom: 1rem;
   }
   .heading__left h1 {
     font-size: 1.5rem;
@@ -306,14 +346,6 @@ body.night {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  .stats-wrapper {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
-  .daily-overview {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
   }
 }
 /*# sourceMappingURL=style.css.map */

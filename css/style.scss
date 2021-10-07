@@ -2,6 +2,7 @@
 :root {
   --cl-lime-green: hsl(163, 72%, 41%);
   --cl-bright-red: hsl(356, 69%, 56%);
+  --cl-twitter: hsl(203, 89%, 53%);
   --cl-facebook: hsl(208, 92%, 53%);
   --cl-instagram-gradient1: hsl(37, 97%, 70%);
   --cl-instagram-gradient2: hsl(329, 70%, 58%);
@@ -34,11 +35,11 @@
   //   height: 100vh;
 }
 .wrapper {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  margin: 3rem;
 }
 
 body {
@@ -70,6 +71,7 @@ body {
     align-items: center;
     gap: 1rem;
     .switch {
+      cursor: pointer;
       width: 50px;
       height: 24px;
       position: relative;
@@ -95,11 +97,12 @@ body {
   width: 100%;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 2rem;
   margin-top: 2rem;
   margin-bottom: 3rem;
   .stats {
+    position: relative;
     padding: 1.5rem;
     background-color: var(--cl-dark-card-bg);
     display: flex;
@@ -107,6 +110,51 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    z-index: -1;
+    &:nth-child(1):before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      top: 0px;
+      left: 0;
+      border-radius: 5px 5px 0 0;
+      background: var(--cl-facebook);
+    }
+    &:nth-child(2):before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      top: 0px;
+      left: 0;
+      border-radius: 5px 5px 0 0;
+      background: var(--cl-twitter);
+    }
+    &:nth-child(3):before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      top: 0px;
+      left: 0;
+      border-radius: 5px 5px 0 0;
+      background: linear-gradient(
+        to left,
+        var(--cl-instagram-gradient2),
+        var(--cl-instagram-gradient1)
+      );
+    }
+    &:nth-child(4):before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      top: 0px;
+      left: 0;
+      border-radius: 5px 5px 0 0;
+      background: var(--cl-youtube);
+    }
     .social {
       display: flex;
       align-items: center;
@@ -133,6 +181,9 @@ body {
       gap: 0.5rem;
       color: var(--cl-lime-green);
       padding: --padding-s 0;
+      p:nth-child(4) {
+        color: var(--cl-bright-red);
+      }
     }
   }
 }
@@ -141,8 +192,8 @@ body {
 
   margin-top: 2rem;
   display: grid;
-  grid-auto-rows: 150px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 120px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 2rem;
 
   .card {
@@ -172,13 +223,9 @@ body {
       span {
         color: var(--cl-lime-green);
         position: relative;
-
-        &::before {
-          content: url("../images/icon-up.svg");
-          position: absolute;
-          bottom: 0;
-          left: -10px;
-        }
+      }
+      .red {
+        color: var(--cl-bright-red);
       }
     }
   }
@@ -186,6 +233,7 @@ body {
 .mode {
   background-color: var(--cl-dark-card-bg);
   transition: all 0.4s ease;
+  cursor: pointer;
   &:hover {
     background-color: hsl(229, 27%, 32%);
   }
@@ -209,23 +257,14 @@ body.night {
   background-color: var(--cl-light-theme-toggle);
 }
 
-@media (max-width: 1100px) {
-  .wrapper {
-    height: 100%;
-    padding: 2rem;
-  }
-  .stats-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .daily-overview {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 @media (max-width: 500px) {
   .heading {
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 2rem;
     &__left {
+      margin-bottom: 1rem;
+
       h1 {
         font-size: 1.5rem;
       }
@@ -235,35 +274,4 @@ body.night {
       justify-content: space-between;
     }
   }
-  .stats-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .daily-overview {
-    grid-template-columns: 1fr;
-  }
 }
-
-// .switch {
-//   position: relative;
-//   display: inline-block;
-//   width: 50px;
-//   height: 24px;
-//   background: linear-gradient(
-//     to left,
-//     var(--cl-dark-theme-toggle-gradient1),
-//     var(--cl-dark-theme-toggle-gradient2)
-//   );
-//   border-radius: 100px;
-// }
-
-// .checkbox {
-//   position: absolute;
-//   content: "";
-//   height: 16px;
-//   width: 16px;
-//   left: 4px;
-//   bottom: 4px;
-//   background-color: var(--cl-dark-theme-bg);
-//   border-radius: 50%;
-//   transition: all 0.4s ease;
-// }
