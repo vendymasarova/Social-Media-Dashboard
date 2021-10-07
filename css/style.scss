@@ -32,7 +32,6 @@
 .container {
   max-width: 1050px;
   margin: 0 auto;
-  //   height: 100vh;
 }
 .wrapper {
   display: flex;
@@ -47,14 +46,12 @@ body {
   color: var(--cl-white);
   font-family: "Inter", sans-serif;
   font-weight: 700;
-
   background: var(--cl-dark-theme-bg);
 }
 
 .heading {
   height: 10vh;
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -199,7 +196,6 @@ body {
   .card {
     display: flex;
     gap: 1rem;
-    // align-items: center;
     flex-direction: column;
     justify-content: space-around;
     border-radius: 5px;
